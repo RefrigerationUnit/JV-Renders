@@ -216,21 +216,67 @@ a {
     margin-bottom: 5rem;
 }
 
+.project-gallery {
+    position: relative;
+}
+
 .project-scroll {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     gap: 1.5rem;
-    padding-bottom: 1rem;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
 }
 
-/* Hides scrollbar for a cleaner look */
 .project-scroll::-webkit-scrollbar {
-    height: 8px;
+    display: none;
 }
-.project-scroll::-webkit-scrollbar-thumb {
-    background: #777;
-    border-radius: 4px;
+
+.gallery-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    display: grid;
+    width: 2.75rem;
+    height: 2.75rem;
+    place-items: center;
+    border: 1px solid rgba(232, 232, 232, 0.55);
+    border-radius: 50%;
+    background-color: rgba(17, 18, 20, 0.9);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    color: #f5f5f5;
+    font-family: inherit;
+    font-size: 1.35rem;
+    line-height: 1;
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: background-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+}
+
+.gallery-arrow--previous {
+    left: 1rem;
+}
+
+.gallery-arrow--next {
+    right: 1rem;
+}
+
+.gallery-arrow:hover:not(:disabled),
+.gallery-arrow:focus-visible:not(:disabled) {
+    background-color: #f5f5f5;
+    color: #111214;
+}
+
+.gallery-arrow:focus-visible {
+    outline: 2px solid #f5f5f5;
+    outline-offset: 3px;
+}
+
+.gallery-arrow:disabled {
+    cursor: default;
+    opacity: 0;
+    pointer-events: none;
 }
 
 .project-scroll img {
@@ -246,6 +292,22 @@ a {
     font-size: 1.2rem;
     font-weight: 400;
     text-transform: capitalize;
+}
+
+@media (max-width: 600px) {
+    .gallery-arrow {
+        width: 2.3rem;
+        height: 2.3rem;
+        font-size: 1.15rem;
+    }
+
+    .gallery-arrow--previous {
+        left: 0.5rem;
+    }
+
+    .gallery-arrow--next {
+        right: 0.5rem;
+    }
 }
 
 /* --- Footer / Software Section --- */
