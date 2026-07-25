@@ -1,4 +1,36 @@
 /* --- Global Styles --- */
+@font-face {
+    font-family: 'Velvelyne';
+    src: url('./fonts/Velvelyne-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Velvelyne';
+    src: url('./fonts/Velvelyne-Book.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Velvelyne';
+    src: url('./fonts/Velvelyne-Regular.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Velvelyne';
+    src: url('./fonts/Velvelyne-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -10,7 +42,7 @@ html {
 }
 
 body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Velvelyne', sans-serif;
     color: #e8e8e8;
     background-color: #111214;
     line-height: 1.6;
